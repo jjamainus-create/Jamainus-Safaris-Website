@@ -1,0 +1,6 @@
+{
+  "name": "Jamainus Safaris - Discover the Soul of Africa",
+  "description": "Official portal for Jamainus Safaris & Jamainus Charity Foundation Ltd based in Mbale, Eastern Uganda. Tailor-made wildlife, cultural, agritourism, and spiritual itineraries across East Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
