@@ -1,8 +1,8 @@
 import React from 'react';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { COMPANY_DETAILS, RESPONSIBLE_PRINCIPLES, WHY_CHOOSE_US } from '../data/companyData';
+import { COMPANY_DETAILS, RESPONSIBLE_PRINCIPLES, WHY_CHOOSE_US, BRANCH_OFFICES } from '../data/companyData';
 import { SAFARI_IMAGES } from '../data/imageAssets';
-import { Download, ShieldCheck, Heart, MapPin, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
+import { Download, ShieldCheck, Heart, MapPin, CheckCircle2, FileText, ArrowRight, Building2, Sparkles } from 'lucide-react';
 
 interface AboutPageProps {
   onNavigate: (path: string) => void;
@@ -266,6 +266,112 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               referrerPolicy="no-referrer"
               className="rounded-xl border border-stone-700 shadow-2xl max-h-72 object-contain"
             />
+          </div>
+        </div>
+      </div>
+
+      {/* Operational Headquarters & Upcoming Regional Offices Expansion */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <div className="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#166534] text-white text-xs font-bold uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-300" />
+              <span>Operational Network</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-1">
+              Head Office & 6 Upcoming Regional Bases
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-2xl">
+              From our founding headquarters in Mbale at the foot of Mount Elgon, Jamainus Safaris is opening six specialized regional and international branch offices to offer localized safari coordination, instant permit handling, and direct community linkages.
+            </p>
+          </div>
+          <button
+            onClick={() => onNavigate('/contact')}
+            className="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-md text-xs font-semibold uppercase tracking-wider shrink-0 transition-colors cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
+          >
+            <span>View Office Details</span>
+            <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+          </button>
+        </div>
+
+        {/* Head Office Card + Upcoming Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Head Office Spotlight (4 cols) */}
+          <div className="lg:col-span-4 bg-[#166534] text-white p-6 sm:p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-md">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-2.5 py-1 rounded-full bg-emerald-500/30 text-emerald-200 text-[10px] font-bold uppercase tracking-wider border border-emerald-400/40">
+                  Operational Headquarters
+                </span>
+                <span className="text-xs font-mono text-emerald-200">UGANDA</span>
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-white">
+                Mbale Head Office
+              </h3>
+              <p className="text-xs text-emerald-100 leading-relaxed">
+                Our central nerve center at the foot of Mount Elgon coordinating fleet deployments, senior naturalist guides, Bugisu Arabica agritourism, and the Jamainus Charity Foundation Ltd.
+              </p>
+              <div className="space-y-1.5 text-xs text-emerald-100 pt-2 border-t border-emerald-600/60 font-mono">
+                <div>P.O. Box 530, Mbale, Eastern Uganda</div>
+                <div>Hotline: +256 785 254899</div>
+                <div>Email: jjamainus@gmail.com</div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => onNavigate('/contact')}
+              className="w-full py-2.5 bg-white text-[#166534] hover:bg-emerald-50 rounded-md font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+            >
+              Contact Mbale HQ
+            </button>
+          </div>
+
+          {/* 6 Upcoming Regional Bases (8 cols) */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {BRANCH_OFFICES.filter((o) => o.status === 'Opening Soon').map((office) => (
+              <div
+                key={office.id}
+                className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs hover:border-[#166534] hover:shadow-md transition-all flex flex-col justify-between space-y-3 group"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse" />
+                      Opening Soon
+                    </span>
+                    <span className="text-[10px] font-mono text-stone-400 uppercase">
+                      {office.country}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h4 className="font-serif text-lg font-bold text-stone-900 group-hover:text-[#166534] transition-colors">
+                      {office.location}
+                    </h4>
+                    <span className="text-[11px] text-[#166534] font-medium block">
+                      {office.region}
+                    </span>
+                  </div>
+
+                  <p className="text-[11px] text-stone-600 leading-relaxed line-clamp-3">
+                    {office.description}
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
+                  <span className="text-[10px] text-stone-500 font-mono">
+                    {office.keyCircuits[0]} & more
+                  </span>
+                  <button
+                    onClick={() => onNavigate('/contact')}
+                    className="text-[10px] font-bold text-[#166534] hover:underline flex items-center gap-0.5 cursor-pointer"
+                  >
+                    <span>Details</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

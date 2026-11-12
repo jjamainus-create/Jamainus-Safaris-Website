@@ -193,6 +193,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   </div>
                 ))}
               </div>
+
+              {/* Regional Offices Opening Soon */}
+              <div className="pt-3 border-t border-stone-800 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400">
+                    Offices Opening Soon:
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                </div>
+                <div className="flex flex-wrap gap-1 text-[11px] text-stone-300">
+                  {['Kisoro', 'Kibale', 'Sempaya', 'Moroto', 'Rwanda', 'Tanzania'].map((loc, i) => (
+                    <button
+                      key={i}
+                      onClick={() => onNavigate('/contact')}
+                      className="px-1.5 py-0.5 rounded bg-stone-900 border border-stone-800 hover:border-emerald-500/60 hover:text-emerald-300 transition-colors cursor-pointer font-mono text-[10px]"
+                    >
+                      {loc}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

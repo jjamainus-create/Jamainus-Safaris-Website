@@ -5,6 +5,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # SPA Fallback: all non-asset paths rewrite to /index.html with status 200
 [[redirects]]

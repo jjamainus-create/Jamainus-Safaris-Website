@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Breadcrumbs } from '../components/Breadcrumbs';
-import { COMPANY_DETAILS } from '../data/companyData';
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { COMPANY_DETAILS, BRANCH_OFFICES } from '../data/companyData';
+import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle2, ShieldCheck, Building2, Sparkles, Compass, ArrowRight } from 'lucide-react';
 
 interface ContactPageProps {
   onNavigate: (path: string) => void;
@@ -241,6 +241,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       >
                         <option value="Travel Enquiry">Safari Itinerary & Pricing Enquiry</option>
                         <option value="Tailor-Made Tour">Custom Tailor-Made Itinerary</option>
+                        <option value="Kisoro Office Enquiry">Kisoro Office & Gorilla Permits Enquiry (Opening Soon)</option>
+                        <option value="Kibale Office Enquiry">Kibale Office & Chimpanzee Tracking Enquiry (Opening Soon)</option>
+                        <option value="Sempaya Office Enquiry">Sempaya Hot Springs & Semuliki Enquiry (Opening Soon)</option>
+                        <option value="Moroto Office Enquiry">Moroto & Karamoja Cultural Expeditions (Opening Soon)</option>
+                        <option value="Rwanda Office Enquiry">Rwanda Regional Office & Primate Safaris (Opening Soon)</option>
+                        <option value="Tanzania Office Enquiry">Tanzania Regional Office & Serengeti/Zanzibar (Opening Soon)</option>
                         <option value="Charity & Partnership">Jamainus Charity Foundation Partnership</option>
                         <option value="Agritourism & Coffee">Mount Elgon Coffee Tour Specifics</option>
                         <option value="Ground Handling & B2B">Tour Operator / Travel Agent Partnership</option>
@@ -281,6 +287,161 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           </div>
         </div>
       </div>
+
+      {/* Strategic Regional Expansion: Upcoming Offices (Opening Soon) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8 pt-4">
+        <div className="bg-gradient-to-br from-stone-900 via-stone-900 to-emerald-950 text-white rounded-3xl p-6 sm:p-10 border border-stone-800 shadow-xl space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-800 pb-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-300 animate-pulse" />
+                <span>Strategic Expansion · East Africa Footprint</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                Upcoming Regional Offices (Opening Soon)
+              </h2>
+              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                To better serve travellers with rapid on-the-ground support, local safari directors, and direct community liaisons, Jamainus Safaris is opening six specialized regional and international branch offices across Uganda, Rwanda, and Tanzania.
+              </p>
+            </div>
+
+            <div className="text-xs text-stone-400 bg-stone-800/80 p-3 rounded-xl border border-stone-700 max-w-xs shrink-0">
+              <div className="font-semibold text-emerald-400 mb-1 flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5" />
+                <span>Interim Field Coordination</span>
+              </div>
+              <span>All upcoming locations are currently serviced directly by our central Mbale dispatch fleet. Hotline: </span>
+              <strong className="text-white font-mono">+256 785 254899</strong>
+            </div>
+          </div>
+
+          {/* Grid of the 6 Upcoming Offices */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {BRANCH_OFFICES.filter((o) => o.status === 'Opening Soon').map((office) => (
+              <div
+                key={office.id}
+                className="bg-stone-900/90 rounded-2xl border border-stone-800 hover:border-emerald-500/60 transition-all p-6 flex flex-col justify-between space-y-4 shadow-lg hover:shadow-emerald-950/40 group"
+              >
+                <div className="space-y-3">
+                  {/* Top Bar with Location Pin & Opening Soon Pill */}
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                      {office.status}
+                    </span>
+                    <span className="text-[11px] font-mono uppercase text-stone-400 tracking-wider">
+                      {office.country}
+                    </span>
+                  </div>
+
+                  {/* Office Name & Location */}
+                  <div>
+                    <h3 className="font-serif text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                      {office.location}
+                    </h3>
+                    <div className="text-xs text-emerald-400 font-medium flex items-center gap-1 mt-0.5">
+                      <MapPin className="w-3 h-3 shrink-0" />
+                      <span>{office.region}</span>
+                    </div>
+                  </div>
+
+                  {/* Landmark */}
+                  {office.landmark && (
+                    <div className="p-2.5 rounded-lg bg-stone-950/80 border border-stone-800/80 text-[11px] text-stone-300">
+                      <strong className="text-emerald-400 font-semibold block text-[10px] uppercase tracking-wider">
+                        Regional Landmark Hub
+                      </strong>
+                      <span>{office.landmark}</span>
+                    </div>
+                  )}
+
+                  {/* Description */}
+                  <p className="text-xs text-stone-300 leading-relaxed">
+                    {office.description}
+                  </p>
+
+                  {/* Key Specializations */}
+                  <div className="space-y-1.5 pt-2 border-t border-stone-800">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">
+                      Core Operations & Specializations:
+                    </span>
+                    <ul className="space-y-1 text-xs text-stone-300">
+                      {office.specializations.slice(0, 3).map((spec, sIdx) => (
+                        <li key={sIdx} className="flex items-start gap-1.5">
+                          <span className="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                          <span className="text-[11px] leading-snug">{spec}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Key Circuits Badges */}
+                  <div className="pt-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-1.5">
+                      Key Circuits Supported:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {office.keyCircuits.map((circ, cIdx) => (
+                        <span
+                          key={cIdx}
+                          className="px-2 py-0.5 rounded bg-stone-800/90 text-[10px] text-stone-300 border border-stone-700 font-mono"
+                        >
+                          {circ}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer Action */}
+                <div className="pt-4 border-t border-stone-800 flex items-center justify-between gap-3">
+                  <span className="text-[10px] text-stone-400 truncate">
+                    {office.contactNote}
+                  </span>
+                  <button
+                    onClick={() => {
+                      setSubject(`${office.location} Office Enquiry`);
+                      window.scrollTo({ top: 300, behavior: 'smooth' });
+                    }}
+                    className="px-3 py-1.5 bg-[#166534] hover:bg-[#15803d] text-white rounded text-[11px] font-semibold uppercase tracking-wider shrink-0 transition-colors cursor-pointer flex items-center gap-1"
+                  >
+                    <span>Inquire</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mbale Head Office Reminder Card */}
+          <div className="p-5 rounded-2xl bg-stone-950 border border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-300">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#166534] text-white flex items-center justify-center shrink-0 font-bold">
+                HQ
+              </div>
+              <div>
+                <strong className="text-white block text-sm font-serif">
+                  Principal Head Office: Mbale, Eastern Uganda
+                </strong>
+                <span className="text-stone-400">
+                  P.O. Box 530, Mbale · Operating all primary fleets, agritourism & charity governance.
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg font-semibold uppercase tracking-wider text-[11px] transition-colors"
+              >
+                Direct WhatsApp Hotline
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
+

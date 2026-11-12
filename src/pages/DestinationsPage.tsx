@@ -17,6 +17,7 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onNavigate, 
       id: 'east',
       title: 'Eastern Uganda (The Jamainus Home Base)',
       tagline: 'Foothills of Mount Elgon, Sipi Waterfalls & River Nile',
+      operationalBase: 'Operational Headquarters: Mbale, Eastern Uganda',
       highlights: [
         'Mbale City – The regional headquarters and vibrant cultural capital of Bugisu',
         'Mount Elgon National Park – World’s largest intact volcanic caldera and bamboo zones',
@@ -31,11 +32,13 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onNavigate, 
       id: 'west',
       title: 'Southwestern Uganda & Primate Corridors',
       tagline: 'Ancient Afro-Montane Forests, Mountain Gorillas & Rift Lakes',
+      operationalBase: 'Regional Hubs Opening Soon: Kisoro, Kibale & Sempaya Hot Springs',
       highlights: [
-        'Bwindi Impenetrable National Park – UNESCO sanctuary for mountain gorillas',
-        'Kibale Forest National Park – Africa’s primate capital with 13 primate species',
+        'Bwindi Impenetrable National Park – UNESCO sanctuary for mountain gorillas (Kisoro Office Hub)',
+        'Kibale Forest National Park – Africa’s primate capital with 13 primate species (Kibale Office Hub)',
+        'Semuliki National Park & Sempaya Hot Springs – Geothermal marvels & Albertine Rift birding (Sempaya Office Hub)',
         'Queen Elizabeth National Park – Tree-climbing lions of Ishasha & Kazinga channel',
-        'Lake Bunyonyi – Serene island-studded waters and traditional dugout canoeing',
+        'Lake Bunyonyi & Lake Mutanda – Serene island-studded waters and dugout canoeing',
         'Rwenzori Mountains of the Moon – Glacial peaks and endemic giant lobelias'
       ],
       tours: ['bwindi-gorilla-trekking-4day', 'soul-of-africa-journey', 'forest-herbs-heritage-experience']
@@ -44,12 +47,14 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onNavigate, 
       id: 'north',
       title: 'Northern Uganda & Karamoja Wild Frontiers',
       tagline: 'Untamed Savannah, Roaring Waterfalls & Indigenous Manyattas',
+      operationalBase: 'Regional Hub Opening Soon: Moroto Office (Karamoja & Kidepo Corridor)',
       highlights: [
         'Murchison Falls National Park – The Nile forcefully roaring through a 7-meter gorge',
         'Kidepo Valley National Park – Africa’s true lost wilderness with cheetahs and ostriches',
+        'Moroto & Mount Moroto – Authentic Karamojong pastoralist warrior cultural encounters & hikes',
+        'Kotido Traditional Manyattas – Pastoralist kraals and indigenous lifestyle workshops',
         'Ziwa Rhino Sanctuary – The only place to track wild white rhinos on foot in Uganda',
-        'Moroto & Kotido – Authentic Karamojong pastoralist warrior cultural encounters',
-        'Acholi and Tepeth ancestral heritage communities'
+        'Pian Upe Wildlife Reserve – Pristine savannah roan antelope and ostriches'
       ],
       tours: ['murchison-falls-4day', 'wild-africa-living-cultures']
     },
@@ -57,11 +62,12 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onNavigate, 
       id: 'regional',
       title: 'Trans-Border East Africa Circuit (Rwanda, Kenya, Tanzania & Zanzibar)',
       tagline: 'Uganda, Rwanda, Kenya and Tanzania Seamless Connections',
+      operationalBase: 'Regional Offices Opening Soon: Rwanda (Kigali/Musanze) & Tanzania (Arusha/Serengeti)',
       highlights: [
-        'Rwanda: Volcanoes National Park mountain gorillas & golden monkeys',
+        'Rwanda: Volcanoes National Park mountain gorillas & golden monkeys (Rwanda Office Hub)',
+        'Tanzania: Serengeti endless plains & Ngorongoro Caldera Big 5 descent (Tanzania Office Hub)',
+        'Zanzibar: Stone Town UNESCO spice heritage and turquoise Swahili beaches (Tanzania Office Hub)',
         'Kenya: Maasai Mara Big Cats, wildebeest migration & Amboseli Kilimanjaro herds',
-        'Tanzania: Serengeti endless plains & Ngorongoro Caldera Big 5 descent',
-        'Zanzibar: Stone Town UNESCO spice heritage and turquoise Swahili beaches',
         'Burundi & DR Congo: Trans-boundary rift lakes and Virunga extensions'
       ],
       tours: [
@@ -140,6 +146,12 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onNavigate, 
             <p className="text-sm text-stone-600 italic">
               {activeCircuit.tagline}
             </p>
+            <div className="pt-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-900 border border-emerald-200">
+                <MapPin className="w-3.5 h-3.5 text-emerald-700" />
+                <span>{activeCircuit.operationalBase}</span>
+              </span>
+            </div>
           </div>
 
           <div className="space-y-3 pt-3 border-t border-stone-100">

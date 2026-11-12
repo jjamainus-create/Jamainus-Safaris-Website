@@ -1,4 +1,4 @@
-import { TourismPillar, CharityFocusArea } from '../types';
+import { TourismPillar, CharityFocusArea, BranchOffice } from '../types';
 import { CERTIFICATION_LOGOS } from './imageAssets';
 
 export const COMPANY_DETAILS = {
@@ -364,3 +364,139 @@ export const GEOGRAPHIC_REGIONS = [
     summary: 'Connecting travellers with deep historical memory, artisan brass and textile traditions, vibrant music, world-renowned architecture, and ancestral heritage trails.'
   }
 ];
+
+export const BRANCH_OFFICES: BranchOffice[] = [
+  {
+    id: 'mbale-headquarters',
+    name: 'Head Office (Mbale Headquarters)',
+    location: 'Mbale',
+    country: 'Uganda',
+    region: 'Eastern Uganda · Mount Elgon Foothills',
+    status: 'Operational Head Office',
+    landmark: 'Mount Elgon Caldera & Wanale Ridge Base',
+    description: 'Our founding operational command center and community headquarters coordinating East African safari fleets, guide assignments, community partnerships, and Bugisu Arabica agritourism.',
+    specializations: [
+      'Mount Elgon Trekking & Caldera Expeditions',
+      'Sipi Falls 3-Tier Waterfall Hikes',
+      'Arabica Coffee Farm Harvest-to-Cup Tours',
+      'Jamainus Charity Foundation Community Center'
+    ],
+    keyCircuits: ['Mbale', 'Sipi Falls', 'Mount Elgon NP', 'Jinja Source of the Nile', 'Tororo Rock'],
+    contactNote: 'P.O. Box 530, Mbale · +256 785 254899 / +256 779 448916'
+  },
+  {
+    id: 'kisoro-office',
+    name: 'Kisoro Regional Office',
+    location: 'Kisoro',
+    country: 'Uganda',
+    region: 'Southwestern Uganda · Kigezi Highlands & Virunga Massif',
+    status: 'Opening Soon',
+    landmark: 'Foothills of Mount Muhavura & Lake Mutanda',
+    description: 'Strategically located in Kisoro to serve as our premier southwestern operational base for mountain gorilla tracking, golden monkey treks, volcano summit climbs, and direct overland link to Rwanda.',
+    specializations: [
+      'Bwindi Impenetrable NP Gorilla Permits & Guiding (Rushaga & Nkuringo Sectors)',
+      'Mgahinga Gorilla NP Golden Monkey & Primate Treks',
+      'Mount Muhavura, Sabyinyo & Gahinga Volcano Climbing',
+      'Lake Mutanda Island Canoe & Kayak Safaris',
+      'Batwa Indigenous Cultural Heritage Encounters'
+    ],
+    keyCircuits: ['Bwindi Impenetrable NP', 'Mgahinga Gorilla NP', 'Lake Mutanda', 'Cyanika Border', 'Lake Bunyonyi'],
+    contactNote: 'Opening Soon · Field coordination via Mbale Head Office Hotline: +256 785 254899'
+  },
+  {
+    id: 'kibale-office',
+    name: 'Kibale Regional Office',
+    location: 'Kibale',
+    country: 'Uganda',
+    region: 'Western Uganda · Fort Portal Tourism City & Tooro Kingdom',
+    status: 'Opening Soon',
+    landmark: 'Kibale National Park & Bigodi Wetland Sanctuary',
+    description: 'Established in the "Primate Capital of the World" to provide on-the-ground support for chimpanzee tracking, habituation permits, crater lake hikes, and women-led community wetland conservation.',
+    specializations: [
+      'Chimpanzee Tracking & Full-Day Habituation Experience (CHUV)',
+      'Bigodi Wetland Sanctuary Birding & Community Walk',
+      'Ndali-Kasenda Crater Lakes Scenic Exploration',
+      'Highland Tea Plantation Tours & Factory Cupping',
+      'Tooro Kingdom Cultural Heritage & Karambi Royal Tombs'
+    ],
+    keyCircuits: ['Kibale National Park', 'Bigodi Wetland', 'Fort Portal Tourism City', 'Crater Lakes Region', 'Semuliki Link'],
+    contactNote: 'Opening Soon · Field coordination via Mbale Head Office Hotline: +256 785 254899'
+  },
+  {
+    id: 'sempaya-office',
+    name: 'Sempaya Hot Springs Branch Office',
+    location: 'Sempaya Hot Springs',
+    country: 'Uganda',
+    region: 'Semuliki Valley · Bundibugyo Albertine Rift Basin',
+    status: 'Opening Soon',
+    landmark: 'Female (Nyasimbi) & Male (Bintente) Geothermal Springs',
+    description: 'A specialized eco-tourism outpost on the edge of Semuliki National Park, facilitating geothermal geological excursions, Central African Guinea-Congo lowland birding expeditions, and indigenous forest community dialogues.',
+    specializations: [
+      'Sempaya Geothermal Hot Springs Guided Geology & Egg-Boiling Walk',
+      'Semuliki Lowland Tropical Rainforest & Congo-Biome Birding',
+      'Indigenous Batwa (Bambuti) Forest Heritage Dialogues',
+      'Bundibugyo Organic Cocoa & Vanilla Agroforestry Trails',
+      'Toro-Semliki Wildlife Reserve Savannah Night Game Drives'
+    ],
+    keyCircuits: ['Sempaya Hot Springs', 'Semuliki National Park', 'Bundibugyo Cocoa Corridor', 'Lake Albert Escarpment'],
+    contactNote: 'Opening Soon · Field coordination via Mbale Head Office Hotline: +256 785 254899'
+  },
+  {
+    id: 'moroto-office',
+    name: 'Moroto Regional Office',
+    location: 'Moroto',
+    country: 'Uganda',
+    region: 'Karamoja Sub-Region · Mount Moroto & Kidepo Corridor',
+    status: 'Opening Soon',
+    landmark: 'Mount Moroto & Karamoja Endless Plains',
+    description: 'Our frontier operational hub for the rugged, culturally rich Karamoja region, providing authentic, respectful cultural immersions with pastoralist communities, mountain hikes, and rugged 4x4 safaris to Kidepo Valley.',
+    specializations: [
+      'Authentic Karamojong Cultural Manyatta & Kraal Encounters',
+      'Mount Moroto Mountain Climbing & Tepeth Cultural Trails',
+      'Kidepo Valley NP Big Game Expedition Logistics & Ranger Escorts',
+      'Pian Upe Wildlife Reserve Cheetah & Roan Antelope Safaris',
+      'Traditional Nomad Pastoralist Life, Beadwork & Dance Workshops'
+    ],
+    keyCircuits: ['Mount Moroto', 'Kotido Manyattas', 'Kidepo Valley National Park', 'Pian Upe Reserve', 'Sipi-Moroto Route'],
+    contactNote: 'Opening Soon · Field coordination via Mbale Head Office Hotline: +256 785 254899'
+  },
+  {
+    id: 'rwanda-office',
+    name: 'Rwanda Regional Office',
+    location: 'Rwanda',
+    country: 'Rwanda',
+    region: 'Kigali & Musanze (Volcanoes National Park) Corridor',
+    status: 'Opening Soon',
+    landmark: 'Kigali City & Volcanoes National Park (Musanze)',
+    description: 'Our international regional branch in the Land of a Thousand Hills, providing cross-border seamless ground transfers, gorilla permits at Volcanoes, Kigali cultural-memorial heritage journeys, and Lake Kivu boat excursions.',
+    specializations: [
+      'Volcanoes National Park Mountain Gorilla & Golden Monkey Tracking',
+      'Kigali City Heritage, Peace Memorials & Contemporary Arts',
+      'Lake Kivu Island Boat Cruises & Congo Nile Trail Sections',
+      'Nyungwe National Park Chimpanzee Tracking & Canopy Walkway',
+      'Cross-Border Dual-Country Uganda & Rwanda Expeditions'
+    ],
+    keyCircuits: ['Kigali', 'Musanze (Volcanoes NP)', 'Lake Kivu (Gisenyi/Kibuye)', 'Nyungwe Forest', 'Cyanika & Katuna Borders'],
+    contactNote: 'Opening Soon · Regional coordination via Jamainus Safaris Hotline: +256 785 254899'
+  },
+  {
+    id: 'tanzania-office',
+    name: 'Tanzania Regional Office',
+    location: 'Tanzania',
+    country: 'Tanzania',
+    region: 'Arusha / Moshi & Zanzibar Liaison Corridor',
+    status: 'Opening Soon',
+    landmark: 'Mount Meru, Mount Kilimanjaro & Serengeti Gateway',
+    description: 'Our East African regional headquarters for Tanzania, coordinating epic wildlife migrations across the Serengeti, Ngorongoro Crater caldera descents, Kilimanjaro treks, and historic Swahili coast island retreats in Zanzibar.',
+    specializations: [
+      'Serengeti National Park Great Wildebeest & Zebra Migration Safaris',
+      'Ngorongoro Crater Floor Big Five Conservation Game Drives',
+      'Tarangire National Park Massive Elephant Herds & Baobab Safaris',
+      'Mount Kilimanjaro (Machame, Marangu & Lemosho Routes) Trekking Support',
+      'Zanzibar Historic Stone Town, Spice Farms & Coral Reef Excursions'
+    ],
+    keyCircuits: ['Serengeti NP', 'Ngorongoro Crater', 'Tarangire NP', 'Lake Manyara', 'Mount Kilimanjaro', 'Zanzibar Archipelago'],
+    contactNote: 'Opening Soon · Regional coordination via Jamainus Safaris Hotline: +256 785 254899'
+  }
+];
+

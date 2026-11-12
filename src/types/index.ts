@@ -70,3 +70,18 @@ export interface CustomSafariRequest {
   disabilityAccessibilityNeeds?: string;
   specialRequests?: string;
 }
+
+export interface BranchOffice {
+  id: string;
+  name: string;
+  location: string;
+  country: string;
+  region: string;
+  status: 'Operational Head Office' | 'Opening Soon';
+  landmark?: string;
+  description: string;
+  specializations: string[];
+  keyCircuits: string[];
+  contactNote?: string;
+}
+
