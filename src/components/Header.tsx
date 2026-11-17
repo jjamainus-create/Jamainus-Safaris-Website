@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Menu, X, MessageCircle, Compass } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/companyData';
+import { SocialLinks } from './SocialLinks';
 
 interface HeaderProps {
   currentPath: string;
@@ -65,6 +66,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
               <MessageCircle className="w-3.5 h-3.5 shrink-0" />
               <span>WhatsApp Us</span>
             </a>
+            <span className="text-stone-700 hidden md:inline">|</span>
+            <SocialLinks variant="header" />
           </div>
         </div>
       </div>
@@ -201,10 +204,13 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
               >
                 BOOK A TRIP / Plan Safari
               </button>
-              <div className="pt-2 text-xs text-stone-500 space-y-1">
+              <div className="pt-2 text-xs text-stone-500 space-y-2">
                 <p>Mbale, Eastern Uganda · P.O. Box 530</p>
                 <p className="font-mono">{primaryPhone.display}</p>
                 <p>{COMPANY_DETAILS.emails[0]}</p>
+                <div className="pt-1">
+                  <SocialLinks variant="footer" />
+                </div>
               </div>
             </div>
           </div>

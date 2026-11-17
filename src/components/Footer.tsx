@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Download, Heart, ArrowUpRight, Compass, ShieldCheck, Award } from 'lucide-react';
 import { COMPANY_DETAILS, TOURISM_PILLARS } from '../data/companyData';
+import { SocialLinks } from './SocialLinks';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -192,6 +193,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     </a>
                   </div>
                 ))}
+              </div>
+
+              {/* Follow & Connect Online */}
+              <div className="pt-3 border-t border-stone-800 space-y-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block">
+                  Follow & Connect
+                </span>
+                <SocialLinks variant="footer" />
               </div>
 
               {/* Regional Offices Opening Soon */}

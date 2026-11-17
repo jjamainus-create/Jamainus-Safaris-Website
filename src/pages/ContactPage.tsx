@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { COMPANY_DETAILS, BRANCH_OFFICES } from '../data/companyData';
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle2, ShieldCheck, Building2, Sparkles, Compass, ArrowRight } from 'lucide-react';
+import { SocialLinks } from '../components/SocialLinks';
 
 interface ContactPageProps {
   onNavigate: (path: string) => void;
@@ -137,6 +138,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <MessageCircle className="w-4 h-4" />
                   <span>Chat on WhatsApp Directly</span>
                 </a>
+              </div>
+
+              {/* Official Social & Business Profiles */}
+              <div className="pt-4 border-t border-stone-800 space-y-2.5">
+                <span className="text-[11px] uppercase tracking-wider text-amber-400 font-semibold block">
+                  Connect & Follow Online
+                </span>
+                <SocialLinks variant="cards" />
               </div>
             </div>
 
